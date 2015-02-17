@@ -1,0 +1,3 @@
+convergeApp.controller('StaticCtrl', [function(){
+
+}]);

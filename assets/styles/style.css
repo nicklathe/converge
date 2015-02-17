@@ -1,0 +1,220 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
+.outer {
+    height: 700px;
+    background-image: url('../images/cocktail.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+}
+
+.navbar {
+    border-radius: 0;
+    background-color: rgba(0,0,0,0.0);
+/*    border-top: none;
+    border-left: none;
+    border-right: none;*/
+    height: 100px;
+    border: none;
+}
+
+body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a {
+    color: #fff;
+    font-size: 25px;
+    padding-top: 35px;
+}
+
+#bs-example-navbar-collapse-1 > ul > li > a {
+    color: #fff;
+    font-size: 15px;
+    padding-top: 40px;
+    margin-right: 10px;
+}
+
+#bs-example-navbar-collapse-1 > ul > li > a:hover {
+    border-bottom: 3px solid #fff;
+/*    color: rgba(51,165,214,1);
+    border-color: rgba(51,165,214,1);*/
+}
+
+body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > button > span.icon-bar {
+    background-color: #fff;
+}
+
+body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > button {
+    margin-top: 30px;
+    border: none;
+}
+
+.header > h1 {
+    color: #fff;
+    margin-top: 180px;
+    font-size: 100px;
+    text-shadow: 2px 2px 8px #000;
+    margin-bottom: 50px;
+}
+
+.sub-heading-body {
+    padding-top: 100px;
+}
+
+.sub-heading-body h2 {
+    font-size: 50px;
+}
+
+.sub-heading-body h3 {
+    font-size: 30px;
+}
+
+.main {
+    background-color: #E9E2D7;
+    height: 650px;
+}
+
+.about {
+    height: 650px;
+    background-color: #252B35;
+}
+
+.about-text {
+    padding-top: 100px;
+}
+
+.about h1 {
+    color: #fff;
+    font-size: 50px;
+}
+
+.about p {
+    color: #fff;
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.buttons {
+    border: 3px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+    background-color: none;
+    /* attempting to make the button zoom. It's kinda glitchy*/
+    /*transition: all .2s ease-in-out;*/
+}
+
+.buttons:visited {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(51,165,214,0.7);
+    /* button zoom as mentioned above*/
+    /*transform: scale(1.2);*/
+}
+
+.buttons:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(51,165,214,0.7);
+    /* button zoom as mentioned above*/
+    /*transform: scale(1.2);*/
+}
+
+.scrolldown {
+    margin-top: 50px;
+}
+
+.scrolldown a {
+    display: block;
+    color: #fff;
+}
+
+/*.scrolldown a:visited {
+    text-decoration: none;
+    color: #fff;
+}*/
+
+.scrolldown a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.steps {
+    display: inline-block;
+    padding-top: 50px;
+}
+
+/*#bs-example-navbar-collapse-1 {
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    border: none;
+}*/
+
+/* media queries */
+
+@media (max-width: 600px) {
+    .header > h1 {
+        font-size: 50px;
+    }
+
+    .main {
+        height: 1000px;
+    }
+
+    .sub-heading-body {
+        padding-top: 100px;
+    }
+
+    .sub-heading-body h2 {
+        font-size: 35px;
+    }
+
+    .sub-heading-body h3 {
+        font-size: 25px;
+    }
+
+    .about-text {
+        padding-top: 50px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
