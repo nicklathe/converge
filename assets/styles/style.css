@@ -35,9 +35,33 @@ nav {
 }
 
 body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a {
-    color: #fff;
     font-size: 25px;
     padding-top: 35px;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+    color: rgba(256,256,256,1);
+}
+
+body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a:hover {
+    color: rgba(51,165,214,0.7);
+}
+
+/* Brand for conversation view */
+body > div > div > ng-view > div.wrapper.ng-scope > div > nav > div > div.navbar-header > a {
+    /*color: #fff;*/
+    font-size: 25px;
+    padding-top: 35px;
+    -webkit-transition: color 0.5s ease;
+    -moz-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+    color: rgba(256,256,256,1);
+}
+
+body > div > div > ng-view > div.wrapper.ng-scope > div > nav > div > div.navbar-header > a:hover {
+    color: rgba(51,165,214,0.7);
 }
 
 #bs-example-navbar-collapse-1 > ul > li > a {
@@ -84,11 +108,11 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
 
 .main {
     background-color: #E9E2D7;
-    height: 650px;
+    height: 700px;
 }
 
 .about {
-    height: 650px;
+    height: 700px;
     background-color: #252B35;
 }
 
@@ -108,22 +132,25 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     font-weight: 100;
 }
 
-.buttons {
+/* ------ Buttons ------- */
+
+.button-1 {
     border: 3px solid #fff;
     border-radius: 5px;
     color: #fff;
     font-size: 20px;
+    width: 200px;
     padding: 10px;
     -webkit-transition: background-color 0.5s ease;
     -moz-transition: background-color 0.5s ease;
     -o-transition: background-color 0.5s ease;
     transition: background-color 0.5s ease;
-    background-color: none;
+    background-color: rgba(0,0,0,0.0);
     /* attempting to make the button zoom. It's kinda glitchy*/
     /*transition: all .2s ease-in-out;*/
 }
 
-.buttons:visited {
+.button-1:visited {
     text-decoration: none;
     color: #fff;
     background-color: rgba(51,165,214,0.7);
@@ -131,31 +158,42 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     /*transform: scale(1.2);*/
 }
 
-.buttons:hover {
+.button-1:hover {
     text-decoration: none;
     color: #fff;
+    border-color: #fff;
     background-color: rgba(51,165,214,0.7);
     /* button zoom as mentioned above*/
     /*transform: scale(1.2);*/
 }
 
-.scrolldown {
-    margin-top: 50px;
+.button-2 {
+    border: 3px solid #fff;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 70px;
+    width: 200px;
+    padding: 10px;
+    -webkit-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    -o-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    background-color: rgba(0,0,0,0.0);
+    color: #000;
+    border-color: #000;
 }
 
-.scrolldown a {
-    display: block;
-    color: #fff;
+.button-2:visited {
+    text-decoration: none;
+    color: #000;
+    background-color: rgba(51,165,214,0.7);
 }
 
-/*.scrolldown a:visited {
+.button-2:hover {
     text-decoration: none;
     color: #fff;
-}*/
-
-.scrolldown a:hover {
-    text-decoration: none;
-    color: #fff;
+    border-color: #fff;
+    background-color: rgba(51,165,214,0.7);
 }
 
 .steps {
@@ -163,11 +201,31 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     padding-top: 50px;
 }
 
-/*#bs-example-navbar-collapse-1 {
-    background-color: rgba(0,0,0,0.7);
-    border-radius: 10px;
-    border: none;
-}*/
+.conversation {
+    min-height: 2000px;
+    background-color: #252B35;
+}
+
+.conversation-text {
+    /*margin-bottom: 100px;*/
+}
+
+.conversation h1 {
+    color: #fff;
+    font-size: 50px;
+}
+
+.conversation h4 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.conversation p {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 100;
+}
 
 /* media queries */
 
@@ -177,7 +235,7 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     }
 
     .main {
-        height: 1000px;
+        height: 1300px;
     }
 
     .sub-heading-body {
@@ -194,6 +252,12 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
 
     .about-text {
         padding-top: 50px;
+    }
+
+    #bs-example-navbar-collapse-1 {
+        background-color: rgba(0,0,0,0.7);
+        border-radius: 10px;
+        border: none;
     }
 }
 

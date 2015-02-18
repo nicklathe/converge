@@ -1,6 +1,5 @@
 <div class="wrapper">
-    <div class="outer col-md-12 col-sm-12">
-
+    <div class="conversation-outer col-md-12 col-sm-12">
         <nav class="navbar navbar-default" ng-controller="MainNavCtrl">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -39,9 +38,9 @@
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form> -->
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- <li><a href="/">Home</a></li> -->
-                        <li><a href="#section-start" du-smooth-scroll du-scrollspy>Get Started</a></li>
-                        <li><a href="#section-about" du-smooth-scroll du-scrollspy>About</a></li>
+                        <!-- <li><a href="/">&larr; Back</a></li> -->
+                        <!-- <li><a href="#section-2" du-smooth-scroll du-scrollspy>About</a></li> -->
+                        <!-- <li><a href="">Converge Now</a></li> -->
                         <!-- <li class="dropdown" dropdown>
                             <a href="#" dropdown-toggle class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -56,62 +55,17 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="header text-center">
-            <h1>Indecisive?<br>Converge now.</h1>
-            <form ng-submit="startConvo()">
-                <button type="submit" class="button-1 btn-default" href="">Converge</button>
-            </form>
-        </div>
     </div>
-
-    <section class="main col-md-12 col-sm-12" id="section-start">
-        <div class="sub-heading-body text-center">
-            <h2>Find great spots for food and drinks...</h2>
-            <h3>Halfway between where you and your friends are.</h3>
-            <div class="steps col-md-4">
-                <h3>Step 1</h3>
-                <hr>
-                <div class="text-left">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, mollitia quam temporibus! Explicabo illum eius animi modi sint excepturi maxime rem, officia omnis est neque assumenda nobis culpa dolorem, eaque.</p>
-                </div>
-            </div>
-            <div class="steps col-md-4">
-                <h3>Step 2</h3>
-                <hr>
-                <div class="text-left">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, mollitia quam temporibus! Explicabo illum eius animi modi sint excepturi maxime rem, officia omnis est neque assumenda nobis culpa dolorem, eaque.</p>
-                </div>
-            </div>
-            <div class="steps col-md-4">
-                <h3>Step 3</h3>
-                <hr>
-                <div class="text-left">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, mollitia quam temporibus! Explicabo illum eius animi modi sint excepturi maxime rem, officia omnis est neque assumenda nobis culpa dolorem, eaque.</p>
-                </div>
-            </div>
-            <form ng-submit="startConvo()">
-                <button type="submit" class="button-2 btn-default" href="">Let's Go!</button>
-            </form>
-        </div>
-    </section>
-    <section class="about col-md-12 col-sm-12" id="section-about">
-        <div class="about-text col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center">
-            <h1>About</h1>
-            <hr>
-            <p>This app aims to cut down on the back and forth when trying to find a place to meet a friend for food and drinks. It takes the geo-locaiton of both individuals, and finds places lcated between those two locations. </p>
-        </div>
-    </section>
 </div>
-<footer>
-
-</footer>
-
-
-
-
-
-
-
-
-
-
+<div class="conversation">
+    <div class="conversation-text col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center">
+        <h1>Conversations</h1>
+        <hr>
+        <a ng-click="startYelp()" href="" class="btn btn-default"ng-hide="searched">Get Suggestions</a>
+        <a ng-click="nextPlace()" href="" class="btn btn-default" ng-show="searched">I Don't Like That</a>
+        <!-- <p ng-repeat="place in places">{{place.name}}</p> -->
+        <h4>{{places[0].name}}</h4>
+        <p ng-show="searched"><b>Rating: </b></p><img ng-src="{{places[0].rating_img_url}}" alt="">
+        <p ng-show="searched"><b>Recent review:</b> {{places[0].snippet_text}}</p>
+    </div>
+</div>

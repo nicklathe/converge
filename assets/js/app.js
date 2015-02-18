@@ -14,5 +14,9 @@ convergeApp.config(['$routeProvider', '$locationProvider',function($routeProvide
             templateUrl: '/views/about.html',
             controller: 'StaticCtrl'
         })
+        .when('/conversation/:id', {
+            templateUrl: '/views/conversation.html',
+            controller: 'ConversationCtrl'
+        })
 
 }]);
