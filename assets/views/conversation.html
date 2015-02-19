@@ -64,8 +64,12 @@
         <a ng-click="startYelp()" href="" class="btn btn-default"ng-hide="searched">Get Suggestions</a>
         <a ng-click="nextPlace()" href="" class="btn btn-default" ng-show="searched">I Don't Like That</a>
         <!-- <p ng-repeat="place in places">{{place.name}}</p> -->
-        <h4>{{places[0].name}}</h4>
+        <!-- <h4>{{places[0].name}}</h4> -->
+        <div ng-repeat="place in places">
+            <h4>{{place.name}}</h4>
+        </div>
+<!--         <p ng-show="searched"><b>Choices Left:</b> {{count}}</p>
         <p ng-show="searched"><b>Rating: </b></p><img ng-src="{{places[0].rating_img_url}}" alt="">
-        <p ng-show="searched"><b>Recent review:</b> {{places[0].snippet_text}}</p>
+        <p ng-show="searched"><b>Recent review:</b> {{places[0].snippet_text}}</p> -->
     </div>
 </div>

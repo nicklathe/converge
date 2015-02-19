@@ -10,11 +10,15 @@ convergeApp.config(['$routeProvider', '$locationProvider',function($routeProvide
             templateUrl: '/views/home.html',
             controller: 'HomeCtrl'
         })
-        .when('/about', {
-            templateUrl: '/views/about.html',
-            controller: 'StaticCtrl'
-        })
         .when('/conversation/:id', {
+            templateUrl: '/views/conversation.html',
+            controller: 'ConversationCtrl'
+        })
+        .when('/join/:id/start', {
+            templateUrl: '/views/join.html',
+            controller: 'ConversationCtrl'
+        })
+        .when('/join/:id', {
             templateUrl: '/views/conversation.html',
             controller: 'ConversationCtrl'
         })

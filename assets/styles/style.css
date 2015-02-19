@@ -174,10 +174,10 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     margin-top: 70px;
     width: 200px;
     padding: 10px;
-    -webkit-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-    -moz-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-    -o-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
     background-color: rgba(0,0,0,0.0);
     color: #000;
     border-color: #000;
@@ -191,8 +191,8 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
 
 .button-2:hover {
     text-decoration: none;
-    color: #fff;
-    border-color: #fff;
+    color: #000;
+    border-color: #000;
     background-color: rgba(51,165,214,0.7);
 }
 
@@ -202,7 +202,7 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
 }
 
 .conversation {
-    min-height: 2000px;
+    min-height: 800px;
     background-color: #252B35;
 }
 

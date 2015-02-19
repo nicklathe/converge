@@ -8,16 +8,19 @@
 module.exports = {
 
   attributes: {
-    lat: {
-        type: 'integer'
+    latA: {
+        type: 'float'
     },
-    lon: {
-        type: 'integer'
+    lonA: {
+        type: 'float'
     },
-    convoId: {
-        type: 'integer'
+    latB: {
+        type: 'float'
+    },
+    lonB: {
+        type: 'float'
     }
-
+    //latA,lonA .... latB,lonB : float
   }
 };
 

@@ -34,7 +34,9 @@ module.exports.routes = {
 
   '/':'PagesController.index',
   // 'get /api/conversation/:conversationId': 'ConversationController.startConvo',
-  'get /yelp': 'ConversationController.startYelp',
+  'get /yelp':'ConversationController.startYelp',
+  'post /api/conversation/start':'ConversationController.startConversation',
+  'post /api/conversation/:id/join':'ConversationController.joinConversation',
 
   'get *':{
     controller:'PagesController',
