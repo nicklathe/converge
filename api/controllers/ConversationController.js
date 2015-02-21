@@ -58,7 +58,7 @@ module.exports = {
         Conversation.update(req.params.id,userB).exec(function(err, convo){
             if(err) res.send(400,err);
 
-            var convoInfo = convo[0];
+            var userLoc = convo[0];
 
             var yelp = require("yelp").createClient({
                 consumer_key: process.env.CONSUMER_KEY,
@@ -67,15 +67,17 @@ module.exports = {
                 token_secret: process.env.TOKEN_SECRET
             });
 
-            yelp.search({term: "lunch", bounds: convoInfo.latA + ',' + convoInfo.lonA +  '|' + '47.618427,-122.336265'}, function(error, yelpData) {
+            yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + '47.618427,-122.336265'}, function(error, yelpData) {
                 // console.log(error);
                 // res.send(data);
                 // console.log(yelpData);
                 // var yelpData = data;
-                sails.sockets.broadcast('convo_' + req.params.id,'join', yelpData);
+                var sendData = {yelp: yelpData, convo:convo};
+                // sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
                 sails.sockets.join(req.socket, 'convo_' + req.params.id);
+                sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
                 console.log(convo);
-                res.send(yelpData);
+                res.send(sendData);
             });
 
 
@@ -85,6 +87,10 @@ module.exports = {
             // res.send(yelpData);
         })
 
+    },
+
+    answer:function(req, res){
+        sails.sockets.broadcast('convo_' + req.params.id, 'answer', req.body);
     },
 
     startYelp:function(req, res){

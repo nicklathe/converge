@@ -61,15 +61,15 @@
     <div class="conversation-text col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center">
         <h1>Conversations</h1>
         <hr>
-        <a ng-click="startYelp()" href="" class="btn btn-default"ng-hide="searched">Get Suggestions</a>
-        <a ng-click="nextPlace()" href="" class="btn btn-default" ng-show="searched">I Don't Like That</a>
+        <!-- <a ng-click="startYelp()" href="" class="btn btn-default"ng-hide="searched">Get Suggestions</a> -->
+        <a ng-click="nextPlace()" href="" class="btn btn-default" ng-show="searched">No! Give me another option</a>
+        <a ng-click="yes()" href="" class="btn btn-default" ng-show="searched">Yes! Let's eat</a>
         <!-- <p ng-repeat="place in places">{{place.name}}</p> -->
-        <!-- <h4>{{places[0].name}}</h4> -->
-        <div ng-repeat="place in places">
-            <h4>{{place.name}}</h4>
-        </div>
-<!--         <p ng-show="searched"><b>Choices Left:</b> {{count}}</p>
+        <h4>{{places[0].name}}</h4>
+        <p ng-show="searched"><b>Choices Left:</b> {{count}}</p>
         <p ng-show="searched"><b>Rating: </b></p><img ng-src="{{places[0].rating_img_url}}" alt="">
-        <p ng-show="searched"><b>Recent review:</b> {{places[0].snippet_text}}</p> -->
+        <p ng-show="searched"><b>Recent review:</b> {{places[0].snippet_text}}</p>
+        <p>{{answer}}</p>
+        <p>{{whatUser}}</p>
     </div>
 </div>

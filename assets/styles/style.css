@@ -11,7 +11,7 @@ html, body {
 }
 
 .outer {
-    height: 700px;
+    height: 750px;
     background-image: url('../images/cocktail.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -108,11 +108,11 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
 
 .main {
     background-color: #E9E2D7;
-    height: 700px;
+    height: 750px;
 }
 
 .about {
-    height: 700px;
+    height: 750px;
     background-color: #252B35;
 }
 
