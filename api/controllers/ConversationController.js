@@ -44,13 +44,13 @@ module.exports = {
         Conversation.create(userA).exec(function(err, convo){
             if(err) res.send(400,err);
             sails.sockets.join(req.socket, 'convo_' + convo.id);
-            console.log(convo);
+            // console.log(convo);
             res.send(convo);
         })
     },
 
     joinConversation:function(req, res){
-        console.log('join action');
+
         var userB = {
             latB: req.body.latB,
             lonB: req.body.lonB
@@ -76,7 +76,7 @@ module.exports = {
                 // sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
                 sails.sockets.join(req.socket, 'convo_' + req.params.id);
                 sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
-                console.log(convo);
+                // console.log(convo);
                 res.send(sendData);
             });
 
@@ -91,9 +91,9 @@ module.exports = {
 
     answer:function(req, res){
         sails.sockets.broadcast('convo_' + req.params.id, 'answer', req.body);
-    },
+    }
 
-    startYelp:function(req, res){
+    // startYelp:function(req, res){
 
         // var yelp = require("yelp").createClient({
         //     consumer_key: process.env.CONSUMER_KEY,
@@ -109,6 +109,6 @@ module.exports = {
         //     // console.log(error);
         //     res.send(data);
         // });
-    }
+    // }
 };
 

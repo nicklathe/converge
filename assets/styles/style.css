@@ -27,9 +27,6 @@ nav {
 .navbar {
     border-radius: 0;
     background-color: rgba(0,0,0,0.0);
-/*    border-top: none;
-    border-left: none;
-    border-right: none;*/
     height: 100px;
     border: none;
 }
@@ -49,8 +46,7 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
 }
 
 /* Brand for conversation view */
-body > div > div > ng-view > div.wrapper.ng-scope > div > nav > div > div.navbar-header > a {
-    /*color: #fff;*/
+body > div > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-header > a {
     font-size: 25px;
     padding-top: 35px;
     -webkit-transition: color 0.5s ease;
@@ -60,7 +56,7 @@ body > div > div > ng-view > div.wrapper.ng-scope > div > nav > div > div.navbar
     color: rgba(256,256,256,1);
 }
 
-body > div > div > ng-view > div.wrapper.ng-scope > div > nav > div > div.navbar-header > a:hover {
+body > div > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-header > a:hover {
     color: rgba(51,165,214,0.7);
 }
 
@@ -73,8 +69,6 @@ body > div > div > ng-view > div.wrapper.ng-scope > div > nav > div > div.navbar
 
 #bs-example-navbar-collapse-1 > ul > li > a:hover {
     border-bottom: 3px solid #fff;
-/*    color: rgba(51,165,214,1);
-    border-color: rgba(51,165,214,1);*/
 }
 
 body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > button > span.icon-bar {
@@ -146,16 +140,12 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     -o-transition: background-color 0.5s ease;
     transition: background-color 0.5s ease;
     background-color: rgba(0,0,0,0.0);
-    /* attempting to make the button zoom. It's kinda glitchy*/
-    /*transition: all .2s ease-in-out;*/
 }
 
 .button-1:visited {
     text-decoration: none;
     color: #fff;
     background-color: rgba(51,165,214,0.7);
-    /* button zoom as mentioned above*/
-    /*transform: scale(1.2);*/
 }
 
 .button-1:hover {
@@ -163,8 +153,6 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     color: #fff;
     border-color: #fff;
     background-color: rgba(51,165,214,0.7);
-    /* button zoom as mentioned above*/
-    /*transform: scale(1.2);*/
 }
 
 .button-2 {
@@ -196,23 +184,54 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     background-color: rgba(51,165,214,0.7);
 }
 
+body > div > div > ng-view > div > div.conversation > div > div > a.button-3 {
+    border: 3px solid #fff;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-right: 20px;
+    width: 200px;
+    padding: 10px;
+    -webkit-transition: background-color 0.5s ease, color 0.5s ease;
+    -moz-transition: background-color 0.5s ease. color 0.5s ease;
+    -o-transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    background-color: rgba(0,0,0,0.0);
+    color: #fff;
+    border-color: #fff;
+}
+
+body > div > div > ng-view > div > div.conversation > div > div > a.button-3:hover {
+    text-decoration: none;
+    border-color: #fff;
+    background-color: rgba(256,256,256, 1);
+    color: #000;
+}
 .steps {
     display: inline-block;
     padding-top: 50px;
 }
 
-.conversation {
-    min-height: 800px;
-    background-color: #252B35;
+.conversation-outer {
+    min-height: 830px;
+    background-image: url('../images/cocktail.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-.conversation-text {
-    /*margin-bottom: 100px;*/
+.conversation {
+    /*background-color: #252B35;*/
+    background-color: rgba(37, 43, 53, 0.8);
+    min-height: 650px;
+    margin-top: 100px;
 }
 
 .conversation h1 {
     color: #fff;
     font-size: 50px;
+    padding-top: 50px;
 }
 
 .conversation h4 {
@@ -225,6 +244,25 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     color: #fff;
     font-size: 25px;
     font-weight: 100;
+}
+
+.conversation-text {
+    margin-bottom: 50px;
+}
+
+#responseMsg {
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+h1.waitMsg {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+body > div > div > ng-view > div > div.conversation > div > div:nth-child(11) > a {
+    color: #fff;
+    font-size: 25px;
 }
 
 /* media queries */
@@ -258,6 +296,32 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
         background-color: rgba(0,0,0,0.7);
         border-radius: 10px;
         border: none;
+    }
+
+     p#review {
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
+
+    body > div > div > ng-view > div > div.conversation > div > div > a.button-3 {
+        width: 100px;
+    }
+
+    .conversation h1 {
+        font-size: 40px;
+    }
+
+    .conversation-outer {
+        min-height: 900px;
+    }
+
+    .conversation {
+        height: 500px;
+        margin-top: 50px;
+    }
+    .conversation-text {
+        padding-bottom: 50px;
+        min-height: 400px;
     }
 }
 

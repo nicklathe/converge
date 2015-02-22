@@ -4,7 +4,12 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
 
     $scope.count = 0;
 
-    console.log($location.path().split('/'));
+    $scope.sendId = $routeParams.id;
+
+    $scope.yesCount = 0;
+
+    $scope.agreed = false;
+
     var user = $location.path().split('/');
 
     // io.socket.on('join',function(sendData){
@@ -68,23 +73,11 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                     var convoId = sendData.convo[0].id
                     $scope.places = [];
                     $scope.$apply(function(){
-                        $scope.searched = true;
                         $scope.places = sendData.yelp.businesses;
                         $scope.count = $scope.places.length;
                         $location.path('/join/' + convoId);
+                        $scope.searched = true;
                     });
-
-                    // io.socket.on('join',function(sendData){
-                    //     console.log('received socket event. Yelp', sendData);
-                    //     var convoId = sendData.convo[0].id
-                    //     $scope.searched = true;
-                    //     $scope.places = [];
-                    //     $scope.$apply(function(){
-                    //         $scope.places = sendData.yelp.businesses;
-                    //         $scope.count = $scope.places.length;
-                    //         $location.path('/join/' + convoId);
-                    //     })
-                    // });
                 });
             })
         } else {
@@ -92,97 +85,42 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
         }
     }
 
-    // $scope.joinConvo = function(){
-
-    //     if(navigator.geolocation){
-    //         navigator.geolocation.getCurrentPosition(function(position){
-    //             // console.log(position)
-
-    //             var userPosition = {
-    //                 latB: position.coords.latitude,
-    //                 lonB: position.coords.longitude
-    //             };
-    //             console.log(userPosition);
-
-    //             var joinId = $routeParams.id;
-    //             console.log(joinId);
-
-    //             io.socket.post('/api/conversation/' + joinId + '/join', userPosition, function(sendData){
-    //                 // console.log('data',data);
-    //                 var convoId = sendData.convo[0].id
-    //                 $scope.places = [];
-    //                 $scope.$apply(function(){
-    //                     $scope.searched = true;
-    //                     $scope.places = sendData.yelp.businesses;
-    //                     $scope.count = $scope.places.length;
-    //                     $location.path('/join/' + convoId);
-    //                 });
-
-    //                 // io.socket.on('join',function(sendData){
-    //                 //     console.log('received socket event. Yelp', sendData);
-    //                 //     var convoId = sendData.convo[0].id
-    //                 //     $scope.searched = true;
-    //                 //     $scope.places = [];
-    //                 //     $scope.$apply(function(){
-    //                 //         $scope.places = sendData.yelp.businesses;
-    //                 //         $scope.count = $scope.places.length;
-    //                 //         $location.path('/join/' + convoId);
-    //                 //     })
-    //                 // });
-    //             });
-    //         })
-    //     } else {
-    //         console.log('Could not get position');
-    //     }
-    // };
-
-    // $scope.startYelp = function(){
-    //     $scope.searched = true;
-    //     $scope.places = [];
-    //     $http.get('/yelp').success(function(data){
-    //         $scope.places = data.businesses;
-    //         $scope.count = $scope.places.length;
-    //     }).error(function(err){
-    //         alert(err);
-    //     })
-    // }
-    // $scope.nextPlace = function() {
-    //     if($scope.count === 1){
-    //         alert('You are too picky. Goodbye.');
-    //         $scope.places.shift()
-    //         $scope.count = $scope.places.length;
-    //     } else {
-    //         $scope.places.shift()
-    //         $scope.count = $scope.places.length;
-    //     }
-    // }
     $scope.nextPlace = function(){
         var id = $routeParams.id;
 
         var info = {
             place: $scope.places[0],
             answer:'no',
-            whatUser: user[1]
+            whatUser: user[1],
+            yesCount: 0
         }
         io.socket.post('/api/conversation/' + id + '/answer', info, function(data){
-            //check data
+
         })
     }
 
-    $scope.yes = function(){
+    $scope.thisPlace = function(){
         var id = $routeParams.id;
-
         var info = {
             place: $scope.places[0],
-            answer: 'yes',
-            whatUser: user[1]
+            answer: 'yes!',
+            whatUser: user[1],
+            yesCount: 1
         }
         io.socket.post('/api/conversation/' + id + '/answer', info, function(data){
-            //do some shit
+
         })
     }
 
     io.socket.on('answer', function(data){
+        $scope.userAnswer = false;
+        $scope.yesCount += data.yesCount;
+        if($scope.yesCount === 2){
+            $scope.$evalAsync(function(){
+                $scope.agreed = true;
+            })
+            return;
+        }
         if(data.answer === 'no'){
             if($scope.count === 1){
                 alert('You are too picky. Goodbye.');
@@ -190,46 +128,25 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                 $scope.count = $scope.places.length;
             } else {
                 if(data.place.name === $scope.places[0].name){
+                    if(data.whatUser !== user[1]){
+                        $scope.userAnswer = true;
+                    }
                     $scope.$evalAsync(function(){
                         $scope.places.shift()
                         $scope.count = $scope.places.length;
                         $scope.answer = data.answer;
-                        $scope.whatUser = data.whatUser;
+                        $scope.userAnswer;
                     });
                 }
-
             }
         }else{
+            if(data.whatUser !== user[1]){
+                $scope.userAnswer = true;
+            }
             $scope.$evalAsync(function(){
                 $scope.answer = data.answer;
-                $scope.whatUser = data.whatUser;
+                $scope.userAnswer;
             });
         }
-
     });
-
-
-    //GeoLocation
-    // if(navigator.geolocation){
-    //     navigator.geolocation.getCurrentPosition(function(position){
-    //         console.log(position)
-    //         // alert(position.coords.latitude + ", " + position.coords.longitude);
-    //         var myId = $routeParams.id
-    //         var myPosition = {
-    //             lat: position.coords.latitude,
-    //             lon: position.coords.latitude,
-    //             convoId: $routeParams.id
-    //         };
-
-    //         $http.put('/api/conversation/' + myId, myPosition)
-    //         .success(function(data){
-    //             // alert('It worked: ', data);
-    //         }).error(function(err){
-    //             // alert(err);
-    //         })
-    //     })
-    // } else {
-    //     console.log('Could not get position');
-    // }
-
 }]);

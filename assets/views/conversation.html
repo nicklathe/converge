@@ -1,75 +1,88 @@
-<div class="wrapper">
-    <div class="conversation-outer col-md-12 col-sm-12">
-        <nav class="navbar navbar-default" ng-controller="MainNavCtrl">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button ng-click="navCollapsed = !navCollapsed" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">Converge</a>
-                </div>
+<div class="conversation-outer">
+    <div class="wrapper">
+        <div class="col-md-12 col-sm-12">
+            <nav class="navbar navbar-default" ng-controller="MainNavCtrl">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <!-- <button ng-click="navCollapsed = !navCollapsed" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button> -->
+                        <a class="navbar-brand" href="/">Converge</a>
+                    </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div collapse="navCollapsed" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!-- <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Link</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul> -->
-                    <!-- <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form> -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- <li><a href="/">&larr; Back</a></li> -->
-                        <!-- <li><a href="#section-2" du-smooth-scroll du-scrollspy>About</a></li> -->
-                        <!-- <li><a href="">Converge Now</a></li> -->
-                        <!-- <li class="dropdown" dropdown>
-                            <a href="#" dropdown-toggle class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </li> -->
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <!-- <div collapse="navCollapsed" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
+                        <!-- <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                        <!-- <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form> -->
+                        <!-- <ul class="nav navbar-nav navbar-right"> -->
+                            <!-- <li><a href="/">&larr; Back</a></li> -->
+                            <!-- <li><a href="#section-2" du-smooth-scroll du-scrollspy>About</a></li> -->
+                            <!-- <li><a href="">Converge Now</a></li> -->
+                            <!-- <li class="dropdown" dropdown>
+                                <a href="#" dropdown-toggle class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li> -->
+                        <!-- </ul> -->
+                    <!-- </div> --><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
     </div>
-</div>
-<div class="conversation">
-    <div class="conversation-text col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center">
-        <h1>Conversations</h1>
-        <hr>
-        <!-- <a ng-click="startYelp()" href="" class="btn btn-default"ng-hide="searched">Get Suggestions</a> -->
-        <a ng-click="nextPlace()" href="" class="btn btn-default" ng-show="searched">No! Give me another option</a>
-        <a ng-click="yes()" href="" class="btn btn-default" ng-show="searched">Yes! Let's eat</a>
-        <!-- <p ng-repeat="place in places">{{place.name}}</p> -->
-        <h4>{{places[0].name}}</h4>
-        <p ng-show="searched"><b>Choices Left:</b> {{count}}</p>
-        <p ng-show="searched"><b>Rating: </b></p><img ng-src="{{places[0].rating_img_url}}" alt="">
-        <p ng-show="searched"><b>Recent review:</b> {{places[0].snippet_text}}</p>
-        <p>{{answer}}</p>
-        <p>{{whatUser}}</p>
+    <div class="conversation">
+        <div class="conversation-text col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center">
+            <h1 ng-show="searched">Your Conversation</h1>
+            <h1 class="waitMsg" ng-hide="searched">Send your friend this link</h1>
+            <input ng-hide="searched" class="form-control" type="text" value="http://localhost:1337/join/{{sendId}}">
+            <h1 class="waitMsg" ng-hide="searched">Wait for them to join</h1>
+            <hr>
+            <div id="responseMsg">
+                <p ng-show="userAnswer">Your friend said {{answer}}</p>
+            </div>
+            <div ng-hide="agreed">
+                <p ng-show="searched"><b>Choices Left:</b> {{count}}</p>
+                <a ng-click="thisPlace()" href="" class="btn button-3" ng-show="searched">Yes!</a>
+                <a ng-click="nextPlace()" href="" class="btn button-3" ng-show="searched">No!</a>
+            </div>
+            <p ng-show="agreed">Congrats! You are meeting at: </p>
+            <h4>{{places[0].name}}</h4>
+            <div ng-hide="agreed">
+                <p ng-show="searched"><b>Rating: </b></p><img ng-src="{{places[0].rating_img_url}}" alt="">
+                <p id="review" ng-show="searched"><b>Recent review:</b> {{places[0].snippet_text}}</p>
+            </div>
+            <div ng-show="agreed">
+                <p>Address:</p>
+                <a href="http://maps.google.com/?q={{places[0].location.address[0]}}+{{places[0].location.postal_code}}" target="_blank">{{places[0].location.address[0]}}, {{places[0].location.postal_code}}</a>
+            </div>
+        </div>
     </div>
 </div>
