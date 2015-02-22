@@ -4,6 +4,12 @@ body {
 
 html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.app-outer {
+    /*height: 100%;*/
 }
 
 .wrapper {
@@ -31,7 +37,8 @@ nav {
     border: none;
 }
 
-body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a {
+/*body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a {*/
+body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a {
     font-size: 25px;
     padding-top: 35px;
     -webkit-transition: color 0.5s ease;
@@ -41,12 +48,14 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     color: rgba(256,256,256,1);
 }
 
-body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a:hover {
+/*body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a:hover {*/
+body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a:hover {
     color: rgba(51,165,214,0.7);
 }
 
 /* Brand for conversation view */
-body > div > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-header > a {
+/*body > div > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-header > a {*/
+body > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-header > a {
     font-size: 25px;
     padding-top: 35px;
     -webkit-transition: color 0.5s ease;
@@ -56,7 +65,8 @@ body > div > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-he
     color: rgba(256,256,256,1);
 }
 
-body > div > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-header > a:hover {
+/*body > div > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-header > a:hover {*/
+body > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-header > a:hover {
     color: rgba(51,165,214,0.7);
 }
 
@@ -71,11 +81,13 @@ body > div > div > ng-view > div > div.wrapper > div > nav > div > div.navbar-he
     border-bottom: 3px solid #fff;
 }
 
-body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > button > span.icon-bar {
+/*body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > button > span.icon-bar {*/
+body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > button > span.icon-bar {
     background-color: #fff;
 }
 
-body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > button {
+/*body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > button {*/
+body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > button {
     margin-top: 30px;
     border: none;
 }
@@ -184,7 +196,8 @@ body > div > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > d
     background-color: rgba(51,165,214,0.7);
 }
 
-body > div > div > ng-view > div > div.conversation > div > div > a.button-3 {
+/*body > div > div > ng-view > div > div.conversation > div > div > a.button-3 {*/
+body > div > ng-view > div > div.conversation > div > div > a.button-3 {
     border: 3px solid #fff;
     border-radius: 5px;
     font-size: 20px;
@@ -201,7 +214,8 @@ body > div > div > ng-view > div > div.conversation > div > div > a.button-3 {
     border-color: #fff;
 }
 
-body > div > div > ng-view > div > div.conversation > div > div > a.button-3:hover {
+/*body > div > div > ng-view > div > div.conversation > div > div > a.button-3:hover {*/
+body > div > ng-view > div > div.conversation > div > div > a.button-3:hover {
     text-decoration: none;
     border-color: #fff;
     background-color: rgba(256,256,256, 1);
@@ -213,12 +227,18 @@ body > div > div > ng-view > div > div.conversation > div > div > a.button-3:hov
 }
 
 .conversation-outer {
+    height: 100%;
     min-height: 830px;
     background-image: url('../images/cocktail.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
+/*    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;*/
+    /*height: 100vh;*/
 }
 
 .conversation {
@@ -260,7 +280,8 @@ h1.waitMsg {
     padding-bottom: 20px;
 }
 
-body > div > div > ng-view > div > div.conversation > div > div:nth-child(11) > a {
+/*body > div > div > ng-view > div > div.conversation > div > div:nth-child(11) > a {*/
+body > div > ng-view > div > div.conversation > div > div:nth-child(11) > a {
     color: #fff;
     font-size: 25px;
 }
@@ -298,12 +319,13 @@ body > div > div > ng-view > div > div.conversation > div > div:nth-child(11) > 
         border: none;
     }
 
-     p#review {
+    /*p#review {
         padding-bottom: 50px;
         margin-bottom: 50px;
-    }
+    }*/
 
-    body > div > div > ng-view > div > div.conversation > div > div > a.button-3 {
+    /*body > div > div > ng-view > div > div.conversation > div > div > a.button-3 {*/
+    body > div > ng-view > div > div.conversation > div > div > a.button-3 {
         width: 100px;
     }
 
@@ -319,10 +341,14 @@ body > div > div > ng-view > div > div.conversation > div > div:nth-child(11) > 
         height: 500px;
         margin-top: 50px;
     }
-    .conversation-text {
+
+    .conversation p {
+        font-size: 15px;
+    }
+    /*.conversation-text {
         padding-bottom: 50px;
         min-height: 400px;
-    }
+    }*/
 }
 
 

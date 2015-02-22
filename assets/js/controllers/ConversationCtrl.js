@@ -6,9 +6,9 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
 
     $scope.sendId = $routeParams.id;
 
-    $scope.yesCount = 0;
-
     $scope.agreed = false;
+
+    $scope.yesCount = 0;
 
     var user = $location.path().split('/');
 
@@ -131,6 +131,7 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                     if(data.whatUser !== user[1]){
                         $scope.userAnswer = true;
                     }
+                    $scope.yesCount = 0;
                     $scope.$evalAsync(function(){
                         $scope.places.shift()
                         $scope.count = $scope.places.length;
