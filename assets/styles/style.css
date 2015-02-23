@@ -146,7 +146,7 @@ body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.nav
 
 .button-1 {
     border: 3px solid #fff;
-    border-radius: 5px;
+    border-radius: 30px;
     color: #fff;
     font-size: 20px;
     width: 200px;
@@ -173,7 +173,7 @@ body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.nav
 
 .button-2 {
     border: 3px solid #fff;
-    border-radius: 5px;
+    border-radius: 30px;
     font-size: 20px;
     margin-top: 70px;
     width: 200px;
@@ -203,7 +203,7 @@ body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.nav
 /*body > div > div > ng-view > div > div.conversation > div > div > a.button-3 {*/
 body > div > ng-view > div > div.conversation > div > div > a.button-3 {
     border: 3px solid #fff;
-    border-radius: 5px;
+    border-radius: 30px;
     font-size: 20px;
     margin-top: 50px;
     margin-right: 20px;

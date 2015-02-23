@@ -57,23 +57,25 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
     } else {
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(function(position){
-                // console.log(position)
+
+                $scope.$evalAsync(function(){
+                    $scope.searched = true;
+                })
 
                 var userPosition = {
                     latB: position.coords.latitude,
                     lonB: position.coords.longitude
                 };
-                console.log(userPosition);
 
                 var joinId = $routeParams.id;
                 console.log(joinId);
 
                 io.socket.post('/api/conversation/' + joinId + '/join', userPosition, function(sendData){
-                    // console.log('data',data);
+
                     var convoId = sendData.convo[0].id
                     $scope.places = [];
-                    $scope.$apply(function(){
-                        $scope.searched = true;
+                    $scope.$evalAsync(function(){
+                        // $scope.searched = true;
                         $scope.places = sendData.yelp.businesses;
                         $scope.count = $scope.places.length;
                         $location.path('/join/' + convoId);
