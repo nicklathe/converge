@@ -67,8 +67,8 @@ module.exports = {
                 token_secret: process.env.TOKEN_SECRET
             });
 
-            // yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + '47.618427,-122.336265'}, function(error, yelpData) {
-            yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + userLoc.latB + ',' + userLoc.lonB}, function(error, yelpData) {
+            yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + '47.618427,-122.336265'}, function(error, yelpData) {
+            // yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + userLoc.latB + ',' + userLoc.lonB}, function(error, yelpData) {
 
                 var sendData = {yelp: yelpData, convo:convo};
 
