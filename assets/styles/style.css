@@ -138,6 +138,10 @@ body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.nav
     font-weight: 100;
 }
 
+#section-start > div > div > hr {
+    border-color: #000;
+}
+
 /* ------ Buttons ------- */
 
 .button-1 {
@@ -280,10 +284,31 @@ h1.waitMsg {
     padding-bottom: 20px;
 }
 
-/*body > div > div > ng-view > div > div.conversation > div > div:nth-child(11) > a {*/
 body > div > ng-view > div > div.conversation > div > div:nth-child(11) > a {
     color: #fff;
     font-size: 25px;
+}
+
+.place-anim{
+
+}
+
+.place-anim.ng-enter {
+    -webkit-animation-name: bounceInUp;
+    animation-name: bounceInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.place-anim.ng-leave {
+    -webkit-animation-name: hinge;
+    animation-name: hinge;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 /* media queries */

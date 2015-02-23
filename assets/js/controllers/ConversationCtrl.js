@@ -73,10 +73,10 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                     var convoId = sendData.convo[0].id
                     $scope.places = [];
                     $scope.$apply(function(){
+                        $scope.searched = true;
                         $scope.places = sendData.yelp.businesses;
                         $scope.count = $scope.places.length;
                         $location.path('/join/' + convoId);
-                        $scope.searched = true;
                     });
                 });
             })
