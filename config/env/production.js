@@ -13,13 +13,13 @@
 module.exports = {
 
   connections: {
-        myMongoDbServerProd: {
+        mongoDbServerProd: {
             adapter: 'sails-mongo',
             url: process.env.MONGOSOUP_URL
         }
     },
     models: {
-        connection: 'myMongoDbServerProd'
+        connection: 'mongoDbServerProd'
     }
 
 };

@@ -311,6 +311,10 @@ body > div > ng-view > div > div.conversation > div > div:nth-child(11) > a {
     animation-fill-mode: both;
 }
 
+#personal-link {
+    color: rgba(51,165,214,0.7);
+}
+
 /* media queries */
 
 @media (max-width: 600px) {
