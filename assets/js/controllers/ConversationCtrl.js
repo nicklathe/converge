@@ -46,7 +46,7 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
 
     if(user[1] === 'conversation'){
         io.socket.on('join', function(sendData){
-            console.log('received socket event. Yelp', sendData);
+
             $scope.searched = true;
             $scope.places = [];
             $scope.$apply(function(){
@@ -55,12 +55,13 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
             })
         })
     } else {
+
+        $scope.$evalAsync(function(){
+            $scope.searched = true;
+        })
+
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(function(position){
-
-                $scope.$evalAsync(function(){
-                    $scope.searched = true;
-                })
 
                 var userPosition = {
                     latB: position.coords.latitude,
@@ -68,7 +69,6 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                 };
 
                 var joinId = $routeParams.id;
-                console.log(joinId);
 
                 io.socket.post('/api/conversation/' + joinId + '/join', userPosition, function(sendData){
 

@@ -44,7 +44,7 @@ module.exports = {
         Conversation.create(userA).exec(function(err, convo){
             if(err) res.send(400,err);
             sails.sockets.join(req.socket, 'convo_' + convo.id);
-            // console.log(convo);
+
             res.send(convo);
         })
     },
@@ -68,23 +68,14 @@ module.exports = {
             });
 
             yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + '47.618427,-122.336265'}, function(error, yelpData) {
-                // console.log(error);
-                // res.send(data);
-                // console.log(yelpData);
-                // var yelpData = data;
+
                 var sendData = {yelp: yelpData, convo:convo};
-                // sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
+
                 sails.sockets.join(req.socket, 'convo_' + req.params.id);
                 sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
-                // console.log(convo);
+
                 res.send(sendData);
             });
-
-
-            // sails.sockets.broadcast('convo_' + req.params.id,'join', yelpData);
-            // sails.sockets.join(req.socket, 'convo_' + req.params.id);
-            // console.log(convo);
-            // res.send(yelpData);
         })
 
     },
@@ -92,23 +83,5 @@ module.exports = {
     answer:function(req, res){
         sails.sockets.broadcast('convo_' + req.params.id, 'answer', req.body);
     }
-
-    // startYelp:function(req, res){
-
-        // var yelp = require("yelp").createClient({
-        //     consumer_key: process.env.CONSUMER_KEY,
-        //     consumer_secret: process.env.CONSUMER_SECRET,
-        //     token: process.env.TOKEN,
-        //     token_secret: process.env.TOKEN_SECRET
-        // });
-
-
-
-        // // yelp.search({term: "lunch", location: "Seattle"}, function(error, data) {
-        // yelp.search({term: "lunch", bounds: "47.624106,-122.329910" +  "|" + "47.614850,-122.341454"}, function(error, data) {
-        //     // console.log(error);
-        //     res.send(data);
-        // });
-    // }
 };
 
