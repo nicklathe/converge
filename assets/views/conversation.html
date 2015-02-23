@@ -15,8 +15,8 @@
         <div class="conversation-text col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 text-center">
             <h1 ng-show="searched">Your Conversation</h1>
             <h1 class="waitMsg" ng-hide="searched">Send your friend this link</h1>
-            <input ng-hide="searched" class="form-control" type="text" value="http://localhost:1337/join/{{sendId}}">
-            <!-- <input ng-hide="searched" class="form-control" type="text" value="http://cnvrge.herokuapp.com/join/{{sendId}}"> -->
+            <!-- <input ng-hide="searched" class="form-control" type="text" value="http://localhost:1337/join/{{sendId}}"> -->
+            <input ng-hide="searched" class="form-control" type="text" value="http://cnvrge.herokuapp.com/join/{{sendId}}">
             <h1 class="waitMsg" ng-hide="searched">Wait for them to join</h1>
             <hr ng-show="searched">
             <div id="responseMsg">
