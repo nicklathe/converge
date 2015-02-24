@@ -68,14 +68,16 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                     lonB: position.coords.longitude
                 };
 
+                console.log(userPosition);
+
                 var joinId = $routeParams.id;
 
                 io.socket.post('/api/conversation/' + joinId + '/join', userPosition, function(sendData){
-
+                    // console.log('userB' + sendData);
                     var convoId = sendData.convo[0].id
                     $scope.places = [];
                     $scope.$evalAsync(function(){
-                        // $scope.searched = true;
+                        $scope.searched = true;
                         $scope.places = sendData.yelp.businesses;
                         $scope.count = $scope.places.length;
                         $location.path('/join/' + convoId);
