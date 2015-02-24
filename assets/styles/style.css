@@ -14,7 +14,7 @@ html, body {
 
 .outer {
     height: 750px;
-    background-image: url('../images/cocktail.jpg');
+    background-image: url('../images/cocktail_sm.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -242,7 +242,7 @@ body > div > ng-view > div > div.conversation > div > div > a.button-3:hover {
 .conversation-outer {
     height: 100%;
     min-height: 830px;
-    background-image: url('../images/cocktail.jpg');
+    background-image: url('../images/cocktail_sm.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
