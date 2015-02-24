@@ -103,9 +103,18 @@ body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.nav
 }
 
 .main {
-    background-color: #E9E2D7;
+    /*background-color: #E9E2D7;*/
+    background-color: #EFF4F5;
     height: 750px;
 }
+
+.fa {
+    color: rgba(51,165,214,1);
+}
+
+/*#cnvrge {
+    color: rgba(51,165,214,1);
+}*/
 
 .about {
     height: 750px;
