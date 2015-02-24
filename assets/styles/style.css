@@ -84,10 +84,10 @@ body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.nav
 
 .header > h1 {
     color: #fff;
-    margin-top: 180px;
+    margin-top: 160px;
     font-size: 100px;
     text-shadow: 2px 2px 8px #000;
-    margin-bottom: 50px;
+    margin-bottom: 75px;
 }
 
 .sub-heading-body {
@@ -106,6 +106,10 @@ body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.nav
     /*background-color: #E9E2D7;*/
     background-color: #EFF4F5;
     height: 750px;
+}
+
+.main p {
+    font-size: 16px;
 }
 
 .fa {
@@ -322,7 +326,7 @@ body > div > ng-view > div > div.conversation > div > div:nth-child(11) > a {
     }
 
     .main {
-        height: 1300px;
+        height: 1350px;
     }
 
     .sub-heading-body {
