@@ -83,6 +83,7 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                 });
             })
         } else {
+            // change this to another kind of alert
             console.log('Could not get position');
         }
     }
