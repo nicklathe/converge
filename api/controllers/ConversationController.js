@@ -67,16 +67,42 @@ module.exports = {
                 token_secret: process.env.TOKEN_SECRET
             });
 
-            // yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + '47.618427,-122.336265'}, function(error, yelpData) {
-            yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + userLoc.latB + ',' + userLoc.lonB}, function(error, yelpData) {
+            var distanceCheck = function(a, b){
+                return Math.abs(a - b);
+            }
 
-                var sendData = {yelp: yelpData, convo:convo};
+            if(Math.abs(userLoc.latA - userLoc.latB) <= 0.0003 || Math.abs(userLoc.lonA - userLoc.lonB) <= 0.0003){
+                console.log('single search');
+                yelp.search({term: 'lunch', ll: userLoc.latA + ',' + userLoc.lonA}, function(error, yelpData){
+                    var sendData = {yelp: yelpData, convo:convo};
 
-                sails.sockets.join(req.socket, 'convo_' + req.params.id);
-                sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
+                    sails.sockets.join(req.socket, 'convo_' + req.params.id);
+                    sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
 
-                res.send(sendData);
-            });
+                    res.send(sendData);
+                });
+            } else {
+                yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + userLoc.latB + ',' + userLoc.lonB}, function(error, yelpData) {
+
+                    var sendData = {yelp: yelpData, convo:convo};
+
+                    sails.sockets.join(req.socket, 'convo_' + req.params.id);
+                    sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
+
+                    res.send(sendData);
+                });
+            }
+
+            // yelp.search({term: 'lunch', bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + '47.618427,-122.336265'}, function(error, yelpData) {
+            // yelp.search({term: "lunch", bounds: userLoc.latA + ',' + userLoc.lonA +  '|' + userLoc.latB + ',' + userLoc.lonB}, function(error, yelpData) {
+
+            //     var sendData = {yelp: yelpData, convo:convo};
+
+            //     sails.sockets.join(req.socket, 'convo_' + req.params.id);
+            //     sails.sockets.broadcast('convo_' + req.params.id,'join', sendData);
+
+            //     res.send(sendData);
+            // });
         })
 
     },
