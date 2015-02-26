@@ -72,7 +72,7 @@ module.exports = {
             }
 
             if(Math.abs(userLoc.latA - userLoc.latB) <= 0.0003 || Math.abs(userLoc.lonA - userLoc.lonB) <= 0.0003){
-                console.log('single search');
+                // console.log('single search');
                 yelp.search({term: 'lunch', ll: userLoc.latA + ',' + userLoc.lonA}, function(error, yelpData){
                     var sendData = {yelp: yelpData, convo:convo};
 
