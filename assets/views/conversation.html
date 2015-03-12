@@ -19,6 +19,9 @@
             <input ng-hide="searched" class="form-control" type="text" value="http://cnvrge.herokuapp.com/join/{{sendId}}">
             <h1 class="waitMsg" ng-hide="searched">Wait for them to join</h1>
             <hr ng-show="searched">
+
+            <leaflet class="map" markers="markers" center="center"></leaflet>
+
             <div id="responseMsg">
                 <p ng-show="userAnswer">Your friend said {{answer}}</p>
             </div>

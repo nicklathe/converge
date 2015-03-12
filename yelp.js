@@ -15,6 +15,7 @@
         console.log(yelp);
 
         yelp.search({term: "food", location: "Seattle"}, function(error, data) {
-            console.log(data,error);
+            // console.log(data,error);
+            console.log(JSON.stringify(data, null, 4));
             // res.send(data);
         });

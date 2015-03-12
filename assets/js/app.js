@@ -1,4 +1,4 @@
-var convergeApp = angular.module('ConvergeApp', ['ngRoute', 'ui.bootstrap', 'duScroll', 'ngAnimate']);
+var convergeApp = angular.module('ConvergeApp', ['ngRoute', 'ui.bootstrap', 'duScroll', 'ngAnimate', 'leaflet-directive']);
 
 convergeApp.config(['$routeProvider', '$locationProvider',function($routeProvider, $locationProvider) {
 

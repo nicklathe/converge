@@ -8,6 +8,8 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
 
     $scope.agreed = false;
 
+    $scope.center = {};
+
     // $scope.yesCount = 0;
     $scope.yesCountConvo = 0;
     $scope.yesCountJoin = 0;
@@ -54,6 +56,26 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
             $scope.$apply(function(){
                 $scope.places = sendData.yelp.businesses;
                 $scope.count = $scope.places.length;
+
+                angular.extend($scope, {
+                    center: {
+                        lat: $scope.places[0].location.coordinate.latitude,
+                        lng: $scope.places[0].location.coordinate.longitude,
+                        zoom: 15
+                    },
+                    markers: {
+                        lunchMarker: {
+                            lat: $scope.places[0].location.coordinate.latitude,
+                            lng: $scope.places[0].location.coordinate.longitude,
+                            focus: true,
+                            draggable: false
+                        }
+                    },
+                    defaults: {
+                        scrollWheelZoom: false
+                    }
+                });
+
             })
         })
     } else {
@@ -83,6 +105,26 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                         $scope.places = sendData.yelp.businesses;
                         $scope.count = $scope.places.length;
                         $location.path('/join/' + convoId);
+
+                        angular.extend($scope, {
+                            center: {
+                                lat: $scope.places[0].location.coordinate.latitude,
+                                lng: $scope.places[0].location.coordinate.longitude,
+                                zoom: 15
+                            },
+                            markers: {
+                                lunchMarker: {
+                                    lat: $scope.places[0].location.coordinate.latitude,
+                                    lng: $scope.places[0].location.coordinate.longitude,
+                                    focus: true,
+                                    draggable: false
+                                }
+                            },
+                            defaults: {
+                                scrollWheelZoom: false
+                            }
+                        });
+
                     });
                 });
             })
@@ -141,6 +183,7 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
 
     io.socket.on('answer', function(data){
         $scope.userAnswer = false;
+
         // $scope.yesCount += data.yesCount;
         // ($scope.yesCountConvo += data.yesCountConvo) || ($scope.yesCountJoin += data.yesCountJoin);
         console.log(data);
@@ -161,7 +204,8 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                 $scope.agreed = true;
             })
             return;
-        }
+        };
+
         if(data.answer === 'no'){
             if($scope.count === 1){
                 alert('You are too picky. Goodbye.');
@@ -180,6 +224,27 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
                         $scope.count = $scope.places.length;
                         $scope.answer = data.answer;
                         $scope.userAnswer;
+
+
+                        angular.extend($scope, {
+                            center: {
+                                lat: $scope.places[0].location.coordinate.latitude,
+                                lng: $scope.places[0].location.coordinate.longitude,
+                                zoom: 15
+                            },
+                            markers: {
+                                lunchMarker: {
+                                    lat: $scope.places[0].location.coordinate.latitude,
+                                    lng: $scope.places[0].location.coordinate.longitude,
+                                    focus: true,
+                                    draggable: false
+                                }
+                            },
+                            defaults: {
+                                scrollWheelZoom: false
+                            }
+                        });
+
                     });
                 }
             }
@@ -193,4 +258,10 @@ convergeApp.controller('ConversationCtrl', ['$scope', '$http', '$location','$rou
             });
         }
     });
+
 }]);
+
+
+
+
+

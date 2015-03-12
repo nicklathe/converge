@@ -67,9 +67,9 @@ module.exports = {
                 token_secret: process.env.TOKEN_SECRET
             });
 
-            var distanceCheck = function(a, b){
-                return Math.abs(a - b);
-            }
+            // var distanceCheck = function(a, b){
+            //     return Math.abs(a - b);
+            // }
 
             if(Math.abs(userLoc.latA - userLoc.latB) <= 0.0003 || Math.abs(userLoc.lonA - userLoc.lonB) <= 0.0003){
                 // console.log('single search');

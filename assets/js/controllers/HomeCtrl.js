@@ -8,7 +8,7 @@ convergeApp.controller('HomeCtrl', ['$scope', '$http', '$location','$document', 
     };
 
     $scope.toSectionStart = function(){
-        container.scrllTo(sectionStart, 0, 2000);
+        container.scrollTo(sectionStart, 0, 2000);
     };
 
     $scope.startConvo = function(){

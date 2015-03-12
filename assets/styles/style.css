@@ -33,6 +33,12 @@ nav {
     border: none;
 }
 
+.map {
+    width: 50%;
+    height: 200px;
+    margin: 0 auto;
+}
+
 body > div > ng-view > div > div.outer.col-md-12.col-sm-12 > nav > div > div.navbar-header > a {
     font-size: 25px;
     padding-top: 35px;
@@ -241,7 +247,8 @@ body > div > ng-view > div > div.conversation > div > div > a.button-3:hover {
 
 .conversation-outer {
     height: 100%;
-    min-height: 830px;
+    /*min-height: 830px;*/
+    min-height: 1000px;
     background-image: url('../images/cocktail_sm.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -251,7 +258,7 @@ body > div > ng-view > div > div.conversation > div > div > a.button-3:hover {
 
 .conversation {
     background-color: rgba(37, 43, 53, 0.8);
-    min-height: 650px;
+    min-height: 850px;
     margin-top: 100px;
 }
 
